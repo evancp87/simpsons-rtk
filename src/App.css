@@ -3,7 +3,86 @@ body {
 background-color: #2f64d6;
 display: flex;
 flex-direction: column;
+/* font-family: 'Numans', sans-serif; */
+}
 
+
+
+.simpsons-header {
+    background-image: url(./assets/simpsons-logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 80px;
+
+}
+
+/* controls component styles */
+
+
+.simpsons-input-wrapper  {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+ }
+
+.simpsons-input-wrapper > * {
+/* height: 20px; */
+display: flex;
+align-items: center;
+}
+
+.simpsons-search {
+    flex: 2;
+}
+
+.simpsons-select {
+    flex: 1;
+}
+
+.simpsons-search, .simpsons-select {
+    border-radius: 10px;
+    height: 20px;
+}
+
+.simpsons-search:focus, .simpsons-select:focus, .simpsons-reset:focus, .simpsons-refresh:focus {
+    outline-style: dashed;
+    outline-offset: 0.2em;
+    outline-color: #ffffff;
+
+}
+
+.simpsons-reset {
+    flex: 0;
+    height: 30px;
+}
+
+.simpsons-refresh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+div#root {
+    width: min(900px, 80vw);
+}
+.simpsons-wrapper {
+    max-width: 80vw;
+}
+
+
+.character-name {
+    font-size: clamp(1.563rem, 1.021rem + 1.889vw, 3.188rem);
+
+}
+
+
+.character-details {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .liked {
@@ -14,6 +93,17 @@ max-width: 250px;
 width: 150px;
 }
 
+.simpsons-char {
+    margin: 1em;
+    width: min(100px, 20vw);
+    height: 250px;
+}
+
+
+.long-names {
+    word-break: break-word;
+}
+
 .characterContainer {
 display: flex;
 background-color: cadetblue;
@@ -22,12 +112,30 @@ border: 1px solid #000000;
 border-radius: 10px;
 margin-block: 1em;
 padding: 1em;
+gap: 1em;
+flex-wrap: wrap;
+}
+
+.btn-container {
+    display: flex;
+    gap: 0.3em;
+}
+.quote {
+    width: min(200px, 25vw);
+    margin-top: 4em;
+}
+
+.left-text-img {
+    margin-left: 2em;
 }
 
 .left-text {
 
 order: 1;
+padding-left: 2em;
+margin-top: 0;;
 }
+
 
 
 .nav {
@@ -57,8 +165,13 @@ justify-content: center;
 }
 
 .splash-screen {
+height: 100vh;
 animation: pulse 1s infinite ease-in-out;
+display: flex;
+justify-content:center;
+align-items: center;
 }
+
 @keyframes pulse {
 
 0% {
@@ -74,4 +187,19 @@ opacity: 0.1
 opacity: 1
   
 }
+}
+
+@media screen and (min-width:500px) {
+    .simpsons-char {
+        padding-left: 2em;
+    }
+
+    .character-details {
+       
+        justify-content: normal;
+    }
+
+    .long-names {
+        word-break: normal;
+    }
 }

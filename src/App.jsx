@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Simpsons from "./features/character/Simpsons";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import About from "./components/About";
+import Favourites from "./components/Favourites";
 import Error404 from "./components/Error404";
 import Nav from "./components/Nav";
 import Screen from "./components/Screen";
@@ -50,7 +50,7 @@ const App = () => {
           <Nav />
           <Routes>
             <Route path="/" element={<Simpsons />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/favourites" element={<Favourites />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </>

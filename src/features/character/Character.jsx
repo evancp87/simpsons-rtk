@@ -4,21 +4,27 @@ import { useState } from "react";
 import Name from "./Name";
 import Quote from "../../components/Quote";
 import Image from "../../components/Image";
-import Delete from "./Delete";
 
 const Character = ({ item, handleDelete, deleteChar }) => {
   return (
     <div className="characterContainer">
-      <Name character={item.character} id={item.id} item={item} />
-      <Quote quote={item.quote} characterDirection={item.characterDirection} />
-      <Image image={item.image} />
-
-      <Delete
+      <Name
         character={item.character}
-        handleDelete={handleDelete}
         id={item.id}
+        item={item}
+        handleDelete={handleDelete}
         deleteChar={deleteChar}
       />
+      <div className="character-details">
+        <Quote
+          quote={item.quote}
+          characterDirection={item.characterDirection}
+        />
+        <Image
+          image={item.image}
+          characterDirection={item.characterDirection}
+        />
+      </div>
     </div>
   );
 };

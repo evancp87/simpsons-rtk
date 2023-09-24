@@ -3,7 +3,7 @@
 const Quote = ({ characterDirection, quote }) => {
   const direction = characterDirection === "Left";
 
-  return <p className={direction && "left-text"}>{quote}</p>;
+  return <p className={`quote ${direction && "left-text"}`}>{quote}</p>;
 };
 
 export default Quote;

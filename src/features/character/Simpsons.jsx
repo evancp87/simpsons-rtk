@@ -39,16 +39,20 @@ const Simpsons = () => {
     <>
       <Controls />
       {filteredSimpsonsData.length === 0 && <p>No results found, dude</p>}
-      {filteredSimpsonsData.map((item, index) => {
-        return (
-          <Character
-            item={item}
-            key={item.id}
-            simpsons={simpsons}
-            deleteChar={deleteChar}
-          />
-        );
-      })}
+      {
+        <main className="simpsons-wrapper">
+          {filteredSimpsonsData.map((item, index) => {
+            return (
+              <Character
+                item={item}
+                key={item.id}
+                simpsons={simpsons}
+                deleteChar={deleteChar}
+              />
+            );
+          })}
+        </main>
+      }
     </>
   );
 };

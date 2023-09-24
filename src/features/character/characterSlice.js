@@ -13,14 +13,21 @@ export const setSimpsons = createAsyncThunk(
       const response = await axios.get(
         "https://thesimpsonsquoteapi.glitch.me/quotes?count=10"
       );
+      const uniqueCharacters = [];
+      const characterNames = new Set();
 
-      const data = response.data.map((element, index) => ({
-        ...element,
-        id: index + Math.random(),
-        liked: false,
-      }));
+      response.data.forEach((element) => {
+        // Check if the character name is not already in the characterNames set
+        if (!characterNames.has(element.character)) {
+          uniqueCharacters.push({
+            ...element,
+            liked: false,
+          });
+          characterNames.add(element.character);
+        }
+      });
 
-      return data;
+      return uniqueCharacters;
     } catch (error) {
       console.log("The error is:", error);
       throw error;

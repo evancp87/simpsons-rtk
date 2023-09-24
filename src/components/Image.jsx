@@ -1,8 +1,16 @@
 /* eslint-disable react/prop-types */
 
-const Image = ({ liked, image, character }) => {
+const Image = ({ liked, image, character, characterDirection }) => {
+  const direction = characterDirection === "Left";
+
   return (
-    <img className={liked ? "liked" : "notLiked"} src={image} alt={character} />
+    <img
+      className={`simpsons-char ${liked ? "liked" : "notLiked"} ${
+        direction && "left-text-img"
+      }`}
+      src={image}
+      alt={character}
+    />
   );
 };
 
